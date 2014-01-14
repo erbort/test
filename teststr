@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+
+int main(int argc, char *argv[])
+{
+  char m_netip[16], m_netmask[16], m_netdns[16];
+  char mm[64];
+  
+  memset(m_netip, 0, 16);
+  memset(m_netmask, 0, 16);
+  memset(m_netdns, 0, 16);
+  memset(mm, 0, 64);
+  
+  strcpy(m_netip, "192.168.1.10");
+  strcpy(m_netmask, "255.255.255.0");
+  strcpy(m_netdns, "192.168.1.1");
+
+  sprintf(mm, "%s%s:%s%s:%s%s;", m_netip, " ", m_netmask, " ", m_netdns, " ");
+  printf("result:%s\n%d\n", mm, strlen(mm));
+}
+
+result:192.168.1.10 :255.255.255.0 :192.168.1.1 ;
+42
