@@ -6,7 +6,7 @@ int main(int argc, char *argv[])
 {
   char m_netip[16], m_netmask[16], m_netdns[16];
   char mm[64];
-  
+      
   memset(m_netip, 0, 16);
   memset(m_netmask, 0, 16);
   memset(m_netdns, 0, 16);
@@ -17,6 +17,8 @@ int main(int argc, char *argv[])
   strcpy(m_netdns, "192.168.1.1");
 
   sprintf(mm, "%s%s:%s%s:%s%s;", m_netip, " ", m_netmask, " ", m_netdns, " ");
+  snprintf(mm, 64, "%s%s:%s%s:%s%s;", m_netip, " ", m_netmask, " ", m_netdns, " ");
+
   printf("result:%s\n%d\n", mm, strlen(mm));
 }
 
