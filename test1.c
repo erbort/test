@@ -4,7 +4,7 @@
 #include <sys/stat.h>
 #include <sys/types.h>
 #include <fcntl.h>
-
+#include <time.h>
 
 int main(int argc, char *argv[])
 {
@@ -48,4 +48,22 @@ int main(int argc, char *argv[])
   }
   close(fd);
   return 0;
+}
+
+
+/*
+local->tm_year
+*/
+
+int main(int argc, char *argv[])
+{
+  time_t stime;
+  struct tm *local;
+  
+  stime = time(NULL);
+  
+  local = gmtime(&stime);
+  
+  printf("%d-%d-%d-%d-%d-%d\n",local->tm_year+1900, local->tm_mon+1, local->tm_mday, local->tm_hour+8, local->tm_min, local->tm_sec);
+  //note :tm_hour+8,  
 }
