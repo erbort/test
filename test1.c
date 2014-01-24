@@ -68,3 +68,13 @@ int main(int argc, char *argv[])
   //note :tm_hour+8,  peking time
 }
 
+int main(int  argc, char *argv[])
+{
+    char  *str="hello!";
+    char *p;
+    p=str;
+    printf("%c\n", *p);
+    p = p+2;
+    printf("%c\n",p[-1]);
+    return 0;
+}
